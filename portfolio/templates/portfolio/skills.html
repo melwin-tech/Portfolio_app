@@ -1,0 +1,37 @@
+{% extends "portfolio/base.html" %}
+{% block title %}{{ skill.name }} - Skill Details{% endblock %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h1 class="card-title text-center mb-3">{{ skill.name }}</h1>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p><strong>Category:</strong> {{ skill.get_category_display }}</p>
+                    <p><strong>Proficiency:</strong> {{ skill.proficiency }}%</p>
+                    <p><strong>Experience:</strong> {{ skill.years_experience }} years</p>
+                    {% if skill.icon %}
+                        <p><strong>Icon:</strong> <i class="{{ skill.icon }}"></i></p>
+                    {% endif %}
+                    {% if skill.is_highlight %}
+                        <p class="text-success"><strong>Highlighted Skill</strong></p>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if skill.description %}
+            <hr>
+            <div>
+                <h3>Description</h3>
+                <p>{{ skill.description|linebreaks }}</p>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

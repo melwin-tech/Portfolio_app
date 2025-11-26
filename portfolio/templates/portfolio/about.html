@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}About Me - Portfolio{% endblock %}
+
+{% block content %}
+
+<div class="row align-items-center">
+    <div class="col-md-4 text-center mb-4">
+        <img src="{% static 'portfolio/profile.jpg' %}" class="img-fluid rounded shadow" alt="Profile">
+    </div>
+    <div class="col-md-8">
+        <h1>About Me</h1>
+        <p class="lead">Hello! I'm <strong>Your Name</strong>, a passionate developer building web applications.</p>
+        <h4>Who I Am</h4>
+        <p>I specialize in Django, Python, frontend technologies, databases and clean UI design.</p>
+        <h4>What I Do</h4>
+        <ul>
+            <li>Web Application Development</li>
+            <li>API & Backend Development</li>
+            <li>Database Design</li>
+            <li>UI/UX Layouts</li>
+            <li>Responsive Web Design</li>
+        </ul>
+        <a href="{% url 'contact' %}" class="btn btn-dark mt-3">Contact Me</a>
+    </div>
+</div>
+
+{% endblock %}

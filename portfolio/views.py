@@ -30,15 +30,15 @@ def contact(request):
         email = request.POST.get("email")
         msg = request.POST.get("message")
 
-        # Message that *you* will receive
+
         full_message = f"Message from: {name}\nEmail: {email}\n\nMessage:\n{msg}"
 
-        # Send mail
+
         send_mail(
             subject="New Contact Form Message",
             message=full_message,
             from_email=email,  
-            recipient_list=['yourgmail@gmail.com'],  # YOU will receive this
+            recipient_list=['202301021.melwinmml@student.xavier.ac.in'],  
         )
 
         return redirect( "home")
